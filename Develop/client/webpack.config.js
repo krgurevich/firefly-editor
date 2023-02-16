@@ -27,6 +27,8 @@ module.exports = () => {
       new InjectManifest({
         swSrc: "./src-sw.js",
         swDest: "src-sw.js",
+        include: [/\.html$/, /\.js$/, /\.css$/],
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
       }),
       // Manifest.json File
       new WebpackPwaManifest({
